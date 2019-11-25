@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+
+<div class="container">
+<div class="jumbotron">
+<h2>Registration Form in PHP with validation</h2>
+</div>
+<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+<div class="form-group">
+<p>User name :</p>
+    <input type="text" class="form-control"  <?php   $_POST['username'] ?? ''?>name="user_name">  
+    <span class="text-danger"><?php if (isset($n_erreur)) echo $n_erreur; ?></span>
+    
+  </div> 
+  <div class="form-group ">
+    
+    <p>Email :</p>
+    <input type="email" class="form-control" <?php   $_POST['email'] ?? ''?> name="email">
+    <span class="text-danger"><?php if (isset($em_erreur)) echo $em_erreur; ?></span>
+
+    </div>
+    <div class="form-group">
+    <p>Password :</p>
+    <input type="password" class="form-control"  <?php   $_POST['password'] ?? ''?> name="password" >
+    <span class="text-danger"><?php if (isset($pass_erreur)) echo $pass_erreur; ?></span>
+
+    </div>
+
+  <div class="form-group ">
+    
+    <p> Confirm Password :</p>
+    <input type="pass" class="form-control" name="conf_pass" >
+    <span class="text-danger"><?php if (isset($txt)) echo $txt; ?></span>
+
+    </div>
+    
+    
+   
+  <button type="submit" class="btn btn-primary" name="signup">Submit</button>
+ 
+    
+</form>
+</div>
+</body>
+</html>
