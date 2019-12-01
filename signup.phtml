@@ -17,15 +17,15 @@
 <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
 <div class="form-group">
 <p>User name :</p>
-    <input type="text" class="form-control"  <?php   $_POST['username'] ?? ''?>name="user_name">  
-    <span class="text-danger"><?php if (isset($n_erreur)) echo $n_erreur; ?></span>
+    <input type="text" class="form-control"  <?php   $_POST['username'] ?? ''?> name="user_name" placeholder="name here">  
+    <span class="text-danger"><?php if (isset($n_erreur)) echo $nom_erreur; ?></span>
     
   </div> 
   <div class="form-group ">
     
     <p>Email :</p>
     <input type="email" class="form-control" <?php   $_POST['email'] ?? ''?> name="email">
-    <span class="text-danger"><?php if (isset($em_erreur)) echo $em_erreur; ?></span>
+    <span class="text-danger"><?php if (isset($em_erreur)) echo $email_erreur; ?></span>
 
     </div>
     <div class="form-group">
@@ -38,14 +38,14 @@
   <div class="form-group ">
     
     <p> Confirm Password :</p>
-    <input type="pass" class="form-control" name="conf_pass" >
+    <input type="password" class="form-control" name="conf_pass" >
     <span class="text-danger"><?php if (isset($txt)) echo $txt; ?></span>
 
     </div>
     
     
    
-  <button type="submit" class="btn btn-primary" name="signup">Submit</button>
+  <button type="submit" href="principale.php" class="btn btn-primary" name="signup">Submit</button>
  
     
 </form>

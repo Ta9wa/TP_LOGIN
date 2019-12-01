@@ -2,20 +2,23 @@
 
 
 require 'class/user.class.php';
-
-$username=$_POST['user_name'];
-$email=$_POST['email'];
-$pass=$_POST['password'];
-$passc=$_POST['conf_pass'];
+//include 'signup.phtml';
 if(isset($_POST['signup']))
 {
+$username=$_POST['user_name'];
+//var_dump($username);
+$email=$_POST['email'];
+$pass=$_POST['password'];
+var_dump($pass);
+$passc=$_POST['conf_pass'];
+
 if(!preg_match("/^[a-zA-Z0-9 ]+$/",$username)){
-    $n_erreur="Erreur nom";
+    $nom_erreur="Erreur nom";
     goto stop;
-}}
+}
 
 if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-    $em_erreur="erreur email";
+    $email_erreur="erreur email";
     goto stop;
 }
 
@@ -30,10 +33,12 @@ if($pass!= $passc){
 }
 $si= new user;
 $mdp = password_hash($pass, PASSWORD_DEFAULT);
-var_dump($mdp);
+//var_dump($mdp);
 $si->signupp($username,$email,$mdp);
-
+//header('Location:principale.php');
+}
 
 stop:
 include 'signup.phtml';
+
  
