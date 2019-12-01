@@ -6,10 +6,8 @@ require 'class/user.class.php';
 if(isset($_POST['signup']))
 {
 $username=$_POST['user_name'];
-//var_dump($username);
 $email=$_POST['email'];
 $pass=$_POST['password'];
-var_dump($pass);
 $passc=$_POST['conf_pass'];
 
 if(!preg_match("/^[a-zA-Z0-9 ]+$/",$username)){
